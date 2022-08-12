@@ -3,7 +3,7 @@
 <input id="input1">
 <button>Encriptar</button>
 
-<button>Desencriptar</button>
+<button id="desencriptar">Desencriptar</button>
 
 
 <script>
@@ -13,6 +13,7 @@
 
 //let browserType = 'mozilla';
 var entrada = document.querySelector("input");
+var a,e,i,o,u = 0;
 //var browserType2 = "Hola";
 
 //var entrada2 = entrada;
@@ -20,17 +21,151 @@ var entrada = document.querySelector("input");
 //browserType.toLowerCase();
 //browserType.length;
 
+
+
 function encriptar(){
 
-    
-    entrada.value = entrada.value.replace('e',"enter");
-    //textonuevo.toLocaleLowerCase();
+console.log(entrada.value.length);
+//largo = entrada.value.length;
+largo =100;
+
+
+for (var pos = 0; pos < largo; pos++){
+    console.log(entrada.value);
+
+    if (entrada.value[pos] == 'e'){
+        console.log(entrada.value[pos]);
+        entrada.value = entrada.value.replace('e', 'enter');
+        pos = pos + 5;
+        //e = e + 5;
+        //largo = largo + (e*5);
+        //console.log(entrada.value);
         
-    entrada.value = entrada.value.replace('o', 'ober');
-    entrada.value = entrada.value.replace('i', 'imes');
-    entrada.value = entrada.value.replace('a', 'ai');
-    entrada.value = entrada.value.replace('u', 'ufat');
-    return entrada;
+        
+        //textonuevo.toLocaleLowerCase();
+            
+        //entrada.value = entrada.value.replace('o', 'ober');
+        //entrada.value = entrada.value.replace('i', 'imes');
+        //entrada.value = entrada.value.replace('a', 'ai');
+        //entrada.value = entrada.value.replace('u', 'ufat');
+        
+    }else if((entrada.value[pos] == 'o')){
+        console.log(entrada.value[pos]);
+        entrada.value = entrada.value.replace('o', 'ober');
+        console.log(entrada.value);
+        
+        pos = pos + 4;
+        //o = o + 4;
+        //largo = largo + (o*4);
+        
+        
+    }else if((entrada.value[pos] == 'i')){
+        console.log(entrada.value[pos]);
+        entrada.value = entrada.value.replace('i', 'imes');
+        console.log(entrada.value);
+        
+        pos = pos + 4;
+        //i = i + 4;
+        //largo = largo + (i*4);
+        
+    }else if((entrada.value[pos] == 'a')){
+        console.log(entrada.value[pos]);
+        entrada.value = entrada.value.replace('a', 'ai');
+        console.log(entrada.value);
+        
+        pos =  pos + 2;
+        //a = a + 2;
+        //largo = largo + (a*2);
+        
+    }else if((entrada.value[pos] == 'u')){    
+        console.log(entrada.value[pos]);
+        entrada.value = entrada.value.replace('u', 'ufat');
+        console.log(entrada.value);
+        
+        pos = pos + 4;
+        //u = u + 4;
+        //largo = largo + (u*4);
+        
+    }else if((entrada.value[pos] ==' ')){
+        pos = pos + 1;
+
+    }
+    
+}
+return entrada;
+}
+
+function deshacer(){
+
+console.log(entrada.value.length);
+//largo = entrada.value.length;
+largo = 100;
+
+
+
+for (var pos = 0; pos < largo; pos++){
+    console.log(entrada.value);
+
+    if (entrada.value[pos] == 'e'){
+        console.log(entrada.value[pos]);
+        entrada.value = entrada.value.replace('enter', 'e');
+        //pos = pos + 5;
+        //e = e + 5;
+        //largo = largo + (e*5);
+        //console.log(entrada.value);
+        
+        
+        //textonuevo.toLocaleLowerCase();
+            
+        //entrada.value = entrada.value.replace('o', 'ober');
+        //entrada.value = entrada.value.replace('i', 'imes');
+        //entrada.value = entrada.value.replace('a', 'ai');
+        //entrada.value = entrada.value.replace('u', 'ufat');
+        
+    }else if((entrada.value[pos] == 'o')){
+        console.log(entrada.value[pos]);
+        entrada.value = entrada.value.replace('ober', 'o');
+        console.log(entrada.value);
+        
+        //pos = pos + 4;
+        //o = o + 4;
+        //largo = largo + (o*4);
+        
+        
+    }else if((entrada.value[pos] == 'i')){
+        console.log(entrada.value[pos]);
+        entrada.value = entrada.value.replace('imes', 'i');
+        console.log(entrada.value);
+        
+        //pos = pos + 4;
+        //i = i + 4;
+        //largo = largo + (i*4);
+        
+    }else if((entrada.value[pos] == 'a')){
+        console.log(entrada.value[pos]);
+        entrada.value = entrada.value.replace('ai', 'a');
+        console.log(entrada.value);
+        
+        //pos =  pos + 2;
+        //a = a + 2;
+        //largo = largo + (a*2);
+                           
+    }else if((entrada.value[pos] == 'u')){    
+        console.log(entrada.value[pos]);
+        entrada.value = entrada.value.replace('ufat', 'u');
+        console.log(entrada.value);
+        
+        //pos = pos + 4;
+        //u = u + 4;
+        //largo = largo + (u*4);
+        
+    }else if((entrada.value[pos] ==' ')){
+        pos = pos + 1;
+
+    }
+    
+}
+return entrada;
 }
 
 function desencriptar(){
@@ -49,7 +184,17 @@ encriptar(entrada.value);
 console.log(entrada.value);
 
 
-var boton =  document.querySelector("button");
-    boton.onclick = encriptar;
+var boton1 =  document.querySelector("button");
+    boton1.onclick = encriptar;
 
+var boton2 = document.getElementById("desencriptar");
+    boton2.onclick = deshacer;
+
+
+
+    
+
+
+
+    
 </script>
