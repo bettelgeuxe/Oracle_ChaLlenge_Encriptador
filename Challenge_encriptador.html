@@ -35,7 +35,7 @@ for (var pos = 0; pos < largo; pos++){
 
     if (entrada.value[pos] == 'e'){
         console.log(entrada.value[pos]);
-        entrada.value = entrada.value.replace('e', 'enter');
+        entrada.value = entrada.value.replace(/e/gi, 'enter');
         pos = pos + 5;
         //e = e + 5;
         //largo = largo + (e*5);
@@ -51,7 +51,7 @@ for (var pos = 0; pos < largo; pos++){
         
     }else if((entrada.value[pos] == 'o')){
         console.log(entrada.value[pos]);
-        entrada.value = entrada.value.replace('o', 'ober');
+        entrada.value = entrada.value.replace(/o/gi, 'ober');
         console.log(entrada.value);
         
         pos = pos + 4;
@@ -61,7 +61,7 @@ for (var pos = 0; pos < largo; pos++){
         
     }else if((entrada.value[pos] == 'i')){
         console.log(entrada.value[pos]);
-        entrada.value = entrada.value.replace('i', 'imes');
+        entrada.value = entrada.value.replace(/i/gi, 'imes');
         console.log(entrada.value);
         
         pos = pos + 4;
@@ -70,7 +70,7 @@ for (var pos = 0; pos < largo; pos++){
         
     }else if((entrada.value[pos] == 'a')){
         console.log(entrada.value[pos]);
-        entrada.value = entrada.value.replace('a', 'ai');
+        entrada.value = entrada.value.replace(/a/gi, 'ai');
         console.log(entrada.value);
         
         pos =  pos + 2;
@@ -79,7 +79,7 @@ for (var pos = 0; pos < largo; pos++){
         
     }else if((entrada.value[pos] == 'u')){    
         console.log(entrada.value[pos]);
-        entrada.value = entrada.value.replace('u', 'ufat');
+        entrada.value = entrada.value.replace(/u/gi, 'ufat');
         console.log(entrada.value);
         
         pos = pos + 4;
