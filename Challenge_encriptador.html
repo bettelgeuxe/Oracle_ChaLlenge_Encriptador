@@ -1,10 +1,50 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 
     </head>
     
     <body>
+        <header>
+            <img src="imagenes/logokt.png" alt="logoKTDev">
+        </header>
+        <main>
+            <section class="primeraseccion">
+                <textarea class="areatexto" placeholder="Ingrese el texto aquí"></textarea>
+                <div class="cont-button">
+                    <input type="button" value="Encriptar" class="btn-encriptar">
+                    <input type="button" value="Desencriptar" class="btn-desencriptar">
+                </div>
+            </section>
+            <section class="segundaseccion">
+                <div class="cont-muneco ocultar">
+                    <img src="imagenes/Muneco.png" width="80%">
+                </div>
+                <div class="cont-titulo ocultar">
+                    <h3>Ningún mensaje fué encontrado</h3>
+                </div>
+                <div class="cont-instruccion ocultar">
+                    <p>Ingresa el texto que deseas enctriptar o desencriptar</p>
+                </div>
+                <div class="cont-txt-encriptado">
+                    <h3>Mensaje encriptado:</h3>
+                    <p></p>
+                </div>
+                <div class="cont-btn-copiar">
+                    <input type="button" class="btn-copiar" value="Copiar">
+                </div>
+            </section>
+
+        </main>
+        <footer>
+            <p>Catherine Escobar</p>
+            
+
+        </footer>
         <input id="sinencriptar">
         <input id="encriptado">
 
