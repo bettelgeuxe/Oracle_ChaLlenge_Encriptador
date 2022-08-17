@@ -33,7 +33,7 @@
                 </div>
                 <div class="cont-txt-encriptado">
                     <h3>Mensaje encriptado:</h3>
-                    <p></p>
+                    <p class="txt-encriptado"></p>
                 </div>
                 <div class="cont-btn-copiar">
                     <input type="button" class="btn-copiar" value="Copiar">
@@ -46,12 +46,7 @@
             
 
         </footer>
-        <input id="sinencriptar">
-        <input id="encriptado">
-
-        <button>Encriptar</button>
-
-        <button id="desencriptar">Desencriptar</button>
+        
     </body>
 </html>
 
@@ -62,20 +57,16 @@
 
 //let browserType = 'mozilla';
  
-var entrada = document.querySelector("#sinencriptar");
-var salida = document.querySelector("#encriptado");
-var boton1 =  document.querySelector("button");
-    boton1.onclick = encriptar;
-
-var boton2 = document.getElementById("desencriptar");
-    boton2.onclick = desencriptar;
-
 var botonEncriptar = document.querySelector(".btn-encriptar");
     botonEncriptar.onclick = encriptar;
 var botonDesencriptar = document.querySelector(".btn-desencriptar");
     botonDesencriptar.onclick = desencriptar;
+var ilustracion = document.querySelector(".cont-muneco");
+var titulo2 = document.querySelector(".cont-titulo");
+var instruccion = document.querySelector(".cont-instruccion");
+var textoEncriptado = document.querySelector(".txt-encriptado");
 
-var a,e,i,o,u = 0;
+
 //var browserType2 = "Hola";
 
 //var entrada2 = entrada;
@@ -86,9 +77,48 @@ var a,e,i,o,u = 0;
 
 
 function encriptar(){
-    var texto = entrada.value;
-    var encriptado = texto.replaceAll("e","enter").replaceAll("i","imes").replaceAll("a","ai").replaceAll("o","ober").replaceAll("u","ufat");
-    salida.value = encriptado;
+    mostrarFront2(); 
+    textoEncriptado.textContent = recuperar();
+    
+    
+}
+
+function mostrarFront2(){
+    ilustracion.classList.add("ocultar");
+    titulo2.classList.add("ocultar");
+    instruccion.classList.add("ocultar");
+
+}
+
+function recuperar(){
+    var txtarea = document.querySelector(".areatexto");
+    return txtarea.value;
+}
+
+function enctiptar3(mensaje){
+    var texto = mensaje;
+    var encriptado2 = "";
+    for(var i = 0; i<texto.length; i++){
+        if(texto[i] == "a"){
+            encriptado2 = encriptado2 + "ai"
+        }
+        else if(texto[i] == "e"){
+            encriptado2 = encriptado2 + "enter"
+        }
+        else if(texto[i] == "i"){
+            encriptado2 = encriptado2 + "imes"
+        }
+        else if(texto[i] == "o"){
+            encriptado2 = encriptado2 + "ober"
+        }
+        else if(texto[i] == "u"){
+            encriptado2 = encriptado2 + "ufat"
+        }
+        else{
+            encriptado2 = encriptado2 + texto[i];
+        }
+    }
+    return encriptado2;
 }
 
 /*function deshacer(){
@@ -170,10 +200,6 @@ function desencriptar(){
     var texto = encriptado.replaceAll("enter","e").replaceAll("imes","i").replaceAll("ai","a").replaceAll("ober","o").replaceAll("ufat","u");
     salida.value = texto;    
 }
-
-console.log(entrada.value);
-encriptar(entrada.value);
-console.log(entrada.value);
 
 
 
