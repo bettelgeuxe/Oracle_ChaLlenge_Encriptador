@@ -16,18 +16,19 @@
             <section class="primeraseccion">
                 <textarea class="areatexto" placeholder="Ingrese el texto aquí"></textarea>
                 <div class="cont-button">
+                    <p class="parrafo-aclaracion">&#9888; Solo letras minúsculas y sin acentos</p>
                     <input type="button" value="Encriptar" class="btn-encriptar">
                     <input type="button" value="Desencriptar" class="btn-desencriptar">
                 </div>
             </section>
             <section class="segundaseccion">
-                <div class="cont-muneco ocultar">
+                <div class="cont-muneco">
                     <img src="imagenes/Muneco.png" width="80%">
                 </div>
-                <div class="cont-titulo ocultar">
+                <div class="cont-titulo">
                     <h3>Ningún mensaje fué encontrado</h3>
                 </div>
-                <div class="cont-instruccion ocultar">
+                <div class="cont-instruccion">
                     <p>Ingresa el texto que deseas enctriptar o desencriptar</p>
                 </div>
                 <div class="cont-txt-encriptado">
@@ -60,8 +61,20 @@
 
 
 //let browserType = 'mozilla';
+ 
 var entrada = document.querySelector("#sinencriptar");
 var salida = document.querySelector("#encriptado");
+var boton1 =  document.querySelector("button");
+    boton1.onclick = encriptar;
+
+var boton2 = document.getElementById("desencriptar");
+    boton2.onclick = desencriptar;
+
+var botonEncriptar = document.querySelector(".btn-encriptar");
+    botonEncriptar.onclick = encriptar;
+var botonDesencriptar = document.querySelector(".btn-desencriptar");
+    botonDesencriptar.onclick = desencriptar;
+
 var a,e,i,o,u = 0;
 //var browserType2 = "Hola";
 
@@ -73,78 +86,12 @@ var a,e,i,o,u = 0;
 
 
 function encriptar(){
-
-console.log(entrada.value.length);
-//largo = entrada.value.length;
-largo =100;
-
-
-for (var pos = 0; pos < largo; pos++){
-    console.log(entrada.value);
-
-    if (entrada.value[pos] == 'e'){
-        console.log(entrada.value[pos]);
-        entrada.value = entrada.value.replace(/e/gi, 'enter');
-        pos = pos + 5;
-        //e = e + 5;
-        //largo = largo + (e*5);
-        //console.log(entrada.value);
-        
-        
-        //textonuevo.toLocaleLowerCase();
-            
-        //entrada.value = entrada.value.replace('o', 'ober');
-        //entrada.value = entrada.value.replace('i', 'imes');
-        //entrada.value = entrada.value.replace('a', 'ai');
-        //entrada.value = entrada.value.replace('u', 'ufat');
-        
-    }else if((entrada.value[pos] == 'o')){
-        console.log(entrada.value[pos]);
-        entrada.value = entrada.value.replace(/o/gi, 'ober');
-        console.log(entrada.value);
-        
-        pos = pos + 4;
-        //o = o + 4;
-        //largo = largo + (o*4);
-        
-        
-    }else if((entrada.value[pos] == 'i')){
-        console.log(entrada.value[pos]);
-        entrada.value = entrada.value.replace(/i/gi, 'imes');
-        console.log(entrada.value);
-        
-        pos = pos + 4;
-        //i = i + 4;
-        //largo = largo + (i*4);
-        
-    }else if((entrada.value[pos] == 'a')){
-        console.log(entrada.value[pos]);
-        entrada.value = entrada.value.replace(/a/gi, 'ai');
-        console.log(entrada.value);
-        
-        pos =  pos + 2;
-        //a = a + 2;
-        //largo = largo + (a*2);
-        
-    }else if((entrada.value[pos] == 'u')){    
-        console.log(entrada.value[pos]);
-        entrada.value = entrada.value.replace(/u/gi, 'ufat');
-        console.log(entrada.value);
-        
-        pos = pos + 4;
-        //u = u + 4;
-        //largo = largo + (u*4);
-        
-    }else if((entrada.value[pos] ==' ')){
-        pos = pos + 1;
-
-    }
-    
-}
-return entrada;
+    var texto = entrada.value;
+    var encriptado = texto.replaceAll("e","enter").replaceAll("i","imes").replaceAll("a","ai").replaceAll("o","ober").replaceAll("u","ufat");
+    salida.value = encriptado;
 }
 
-function deshacer(){
+/*function deshacer(){
 
 console.log(entrada.value.length);
 //largo = entrada.value.length;
@@ -216,16 +163,12 @@ for (var pos = 0; pos < largo; pos++){
 }
 return entrada;
 }
-
+*/
 function desencriptar(){
 
-    entrada.value = entrada.value.replace('enter', 'e');
-    entrada.value = entrada.value.replace('imes', 'i');
-    entrada.value = entrada.value.replace('ai', 'a');
-    entrada.value = entrada.value.replace('ober', 'o');
-    entrada.value = entrada.value.replace('ufat', 'u');
-    return entrada;
-        
+    var encriptado= entrada.value;
+    var texto = encriptado.replaceAll("enter","e").replaceAll("imes","i").replaceAll("ai","a").replaceAll("ober","o").replaceAll("ufat","u");
+    salida.value = texto;    
 }
 
 console.log(entrada.value);
@@ -233,11 +176,6 @@ encriptar(entrada.value);
 console.log(entrada.value);
 
 
-var boton1 =  document.querySelector("button");
-    boton1.onclick = encriptar;
-
-var boton2 = document.getElementById("desencriptar");
-    boton2.onclick = deshacer;
 
 
 
