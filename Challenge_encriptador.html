@@ -51,6 +51,7 @@
 </html>
 
 <script>
+
 var botonEncriptar = document.querySelector(".btn-encriptar");
     botonEncriptar.onclick = encriptar;
 var botonDesencriptar = document.querySelector(".btn-desencriptar");
@@ -64,16 +65,16 @@ var textoEncriptado = document.querySelector(".txt-encriptado");
 var txtarea = document.querySelector(".areatexto");
 
 
+
 function encriptar(){
     mostrarFront2(); 
-    if(!validarMensaje()) return;
     textoEncriptado.textContent = encriptarTxt(recuperar());
-    textoEncriptado.textContent = recuperar();
+    
 }
 
 function desencriptar(){
     mostrarFront2();
-    if(!validarMensaje()) return;
+    
     textoEncriptado.textContent = desencriptarTxt(recuperar());
 }
 
