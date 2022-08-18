@@ -35,7 +35,7 @@
                     <p>Ingresa el texto que deseas enctriptar o desencriptar</p>
                 </div>
                 <div class="cont-txt-encriptado">
-                    <h3>Mensaje encriptado:</h3>
+                    <h3>Mensaje secreto:</h3>
                     <p class="txt-encriptado"></p>
                 </div>
                 <div class="cont-btn-copiar">
@@ -70,6 +70,7 @@ var ilustracion = document.querySelector(".cont-muneco");
 var titulo2 = document.querySelector(".cont-titulo");
 var instruccion = document.querySelector(".cont-instruccion");
 var textoEncriptado = document.querySelector(".txt-encriptado");
+var textoDesencriptado = document.queryCommandState(".cont-txt-desencriptado");
 var txtarea = document.querySelector(".areatexto");
 
 function validarMensaje(){

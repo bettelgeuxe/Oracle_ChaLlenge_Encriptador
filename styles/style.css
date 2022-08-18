@@ -208,6 +208,23 @@ opacity: 0.8;
     color: #495057;
 }
 
+.cont-txt-desencriptado{
+    width: 100%;
+    height: 70%;
+    padding: 25px;
+    box-sizing: border-box;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    
+
+
+    /* Gray/gray-400 */
+
+    color: #495057;
+}
+
 .txt-encriptado{
     font-family: 'Inter';
     font-style: normal;
