@@ -64,15 +64,35 @@ var instruccion = document.querySelector(".cont-instruccion");
 var textoEncriptado = document.querySelector(".txt-encriptado");
 var txtarea = document.querySelector(".areatexto");
 
+function validarMensaje(){
+    var mensaje = recuperar();
+    var letrasAdmitidas = "abcdefghijklmnñopqrstuvwxyz ";
+    var mensajeError = "";
+    for (let letra of mensaje){
+        if (!letrasAdmitidas.includes(letra)){
+            mensajeError += `<p class="error">La letra ${letra} no es válida</p>`;
+        }
 
+    }
+
+    if (mensajeError.length === 0){
+        return true;
+    }
+    alert("Estás insertando caracteres no admitidos (mayúsculas,números,caracteres especiales)");
+    reiniciar();
+    return false;
+    
+}
 
 function encriptar(){
+    if(!validarMensaje()) return;
     mostrarFront2(); 
     textoEncriptado.textContent = encriptarTxt(recuperar());
     
 }
 
 function desencriptar(){
+    if(!validarMensaje()) return;
     mostrarFront2();
     
     textoEncriptado.textContent = desencriptarTxt(recuperar());
@@ -90,6 +110,15 @@ function recuperar(){
     return txtarea.value;
 }
 
+function limpiarTexto(){
+    txtarea.value = "";
+    
+}
+
+function reiniciar(){
+    location.reload();
+}
+
 function recuperarResultado(){
     var presultado = document.querySelector(".txt-Encriptado");
     navigator.clipboard.writeText(presultado.innerHTML);
@@ -99,6 +128,9 @@ function recuperarResultado(){
 
 function copiar(){
     textoEncriptado.textContent = recuperarResultado();
+    limpiarTexto();
+
+
 }
 
 function encriptarTxt(mensaje){
